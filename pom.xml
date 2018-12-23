@@ -13,7 +13,7 @@
     </parent>
     <groupId>project.supradeep</groupId>
     <artifactId>spb-pet-clinic</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <packaging>pom</packaging>
     <name>spb-pet-clinic</name>
     <description>Supradeep Pet Clinic Application</description>
@@ -41,6 +41,7 @@
                     <checkModificationExcludes>
                         <checkModificationExclude>pom.xml</checkModificationExclude>
                     </checkModificationExcludes>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
@@ -48,7 +49,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:supradeepbhat/spb-pet-clinic.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>spb-pet-clinic-0.0.2</tag>
   </scm>
 
 
