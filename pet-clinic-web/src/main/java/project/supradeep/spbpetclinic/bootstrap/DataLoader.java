@@ -6,8 +6,6 @@ import project.supradeep.spbpetclinic.model.Owner;
 import project.supradeep.spbpetclinic.model.Vet;
 import project.supradeep.spbpetclinic.services.OwnerService;
 import project.supradeep.spbpetclinic.services.VetService;
-import project.supradeep.spbpetclinic.services.map.OwnerServiceMap;
-import project.supradeep.spbpetclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -15,9 +13,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

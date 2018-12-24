@@ -1,10 +1,12 @@
 package project.supradeep.spbpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import project.supradeep.spbpetclinic.model.Vet;
 import project.supradeep.spbpetclinic.services.VetService;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override

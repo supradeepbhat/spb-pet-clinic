@@ -1,10 +1,12 @@
 package project.supradeep.spbpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import project.supradeep.spbpetclinic.model.Owner;
 import project.supradeep.spbpetclinic.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
