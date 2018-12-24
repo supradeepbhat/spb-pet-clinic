@@ -1,11 +1,11 @@
 package project.supradeep.spbpetclinic.services.map;
 
 import project.supradeep.spbpetclinic.model.Vet;
-import project.supradeep.spbpetclinic.services.CrudService;
+import project.supradeep.spbpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
