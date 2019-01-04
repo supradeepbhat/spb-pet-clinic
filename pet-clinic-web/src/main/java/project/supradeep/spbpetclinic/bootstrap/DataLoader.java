@@ -3,11 +3,14 @@ package project.supradeep.spbpetclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import project.supradeep.spbpetclinic.model.Owner;
+import project.supradeep.spbpetclinic.model.Pet;
 import project.supradeep.spbpetclinic.model.PetType;
 import project.supradeep.spbpetclinic.model.Vet;
 import project.supradeep.spbpetclinic.services.OwnerService;
 import project.supradeep.spbpetclinic.services.PetTypeService;
 import project.supradeep.spbpetclinic.services.VetService;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -29,23 +32,42 @@ public class DataLoader implements CommandLineRunner {
         dog.setName("Dog");
         PetType savedDogPetType = petTypeService.save(dog);
 
-        PetType cat = new PetType();
-        dog.setName("Cat");
-        PetType savedCatPetType = petTypeService.save(cat);
 
         PetType hamster = new PetType();
-        dog.setName("Hamster");
+        hamster.setName("Hamster");
         PetType savedHamsterPetType = petTypeService.save(hamster);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Jack");
         owner1.setLastName("Sparrow");
+        owner1.setAddress("142 North Michigan");
+        owner1.setCity("Chicago");
+        owner1.setTelephone("3129897641");
+
+        Pet jacksPet = new Pet();
+        jacksPet.setName("Scooby");
+        jacksPet.setPetType(savedDogPetType);
+        jacksPet.setOwner(owner1);
+        jacksPet.setBirthDate(LocalDate.now());
+
+        owner1.getPets().add(jacksPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Taylor");
         owner2.setLastName("Durden");
+        owner2.setAddress("142 North Michigan");
+        owner2.setCity("Chicago");
+        owner2.setTelephone("3129897641");
+
+        Pet taylorsHamster = new Pet();
+        taylorsHamster.setName("Bugs");
+        taylorsHamster.setBirthDate(LocalDate.now());
+        taylorsHamster.setOwner(owner2);
+        taylorsHamster.setPetType(hamster);
+
+        owner2.getPets().add(taylorsHamster);
 
         ownerService.save(owner2);
 
